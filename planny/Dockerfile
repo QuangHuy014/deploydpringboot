@@ -13,7 +13,7 @@ RUN mvn clean package
 FROM openjdk:17-jdk-alpine3.14
 
 # Sao chép file JAR từ stage build sang stage run
-COPY --from=build /app/target/Planny-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/planny-0.0.1-SNAPSHOT.jar app.jar
 
 # Chạy ứng dụng khi container khởi động
 CMD ["java", "-jar", "app.jar"]
